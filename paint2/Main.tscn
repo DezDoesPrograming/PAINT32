@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dn0bfdhyerjsp"]
+
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_awray"]
+[ext_resource type="PackedScene" uid="uid://qi4j6oqbhiy1" path="res://Scenes/Panel.tscn" id="2_24gd1"]
+[ext_resource type="PackedScene" uid="uid://cd78ci5r42uvl" path="res://Scenes/gui.tscn" id="3_4gves"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_awray")
+
+[node name="ClrPanel" parent="." instance=ExtResource("2_24gd1")]
+
+[node name="GUI" parent="." instance=ExtResource("3_4gves")]
+
+[connection signal="sendclrdata" from="ClrPanel" to="." method="_on_clr_panel_sendclrdata"]
